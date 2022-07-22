@@ -9,10 +9,6 @@
 #   curl https://raw.githubusercontent.com/cryptopool-builders/Multi-Pool-Installer/master/bootstrap.sh | bash
 #
 #########################################################
-if [ -z "${TAG}" ]; then
-	TAG=v2.55
-fi
-
 
 # Clone the MultiPool repository if it doesn't exist.
 if [ ! -d $HOME/multipool ]; then
@@ -25,7 +21,6 @@ if [ ! -d $HOME/multipool ]; then
 
 	echo Downloading MultiPool Installer ${TAG}. . .
 	git clone \
-		-b ${TAG} --depth 1 \
 		https://github.com/bangdrie/multipool_setup \
 		"$HOME"/multipool/install \
 		< /dev/null 2> /dev/null
